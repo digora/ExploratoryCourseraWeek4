@@ -1,5 +1,7 @@
 library("data.table")
+options(scipen = 99)
 
+## Extract the datasets into the RStudio environment
 SCC <- as.data.table(x = readRDS(file = "Source_Classification_Code.rds"))
 NEI <- as.data.table(x = readRDS(file = "summarySCC_PM25.rds"))
 
@@ -21,8 +23,8 @@ bothNEI <- rbind(vehiclesBaltimoreNEI,vehiclesLANEI)
 ggplot(bothNEI, aes(x=factor(year), y=Emissions, fill=city)) +
   geom_bar(aes(fill=year),stat="identity") +
   facet_grid(scales="free", space="free", .~city) +
-  labs(x="year", y=expression("Total PM"[2.5]*" Emission (Kilo-Tons)")) + 
-  labs(title=expression("PM"[2.5]*" Motor Vehicle Source Emissions in Baltimore & LA, 1999-2008"))
+  labs(x="Year", y="Emission Amount") + 
+  labs(title="Baltimore and LA Source Emissions")
 
 #Save plot to memory
 dev.copy(png, file="plot6.png")

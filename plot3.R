@@ -1,7 +1,7 @@
 library("data.table")
 library("ggplot2")
 
-# Load the NEI & SCC data frames.
+## Extract the datasets into the RStudio environment
 NEI <- as.data.table(x = readRDS("summarySCC_PM25.rds"))
 SCC <- as.data.table(x = readRDS("Source_Classification_Code.rds"))
 

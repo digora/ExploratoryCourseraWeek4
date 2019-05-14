@@ -1,5 +1,6 @@
 library("data.table")
 
+## Extract the datasets into the RStudio environment
 SCC <- as.data.table(x = readRDS(file = "Source_Classification_Code.rds"))
 NEI <- as.data.table(x = readRDS(file = "summarySCC_PM25.rds"))
 
